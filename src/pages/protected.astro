@@ -1,0 +1,9 @@
+---
+const { userId, redirectToSignIn } = Astro.locals.auth()
+
+if (!userId) {
+  return redirectToSignIn()
+}
+---
+
+<div>Protected page</div>

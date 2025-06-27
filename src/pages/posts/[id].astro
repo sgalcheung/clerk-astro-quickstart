@@ -1,0 +1,30 @@
+---
+import { getPostById } from '../../data/models/Post'
+
+const { id } = Astro.params
+if (!id) {
+  return Astro.redirect('/404')
+}
+
+const { userId, redirectToSignIn } = Astro.locals.auth()
+
+if (!userId) {
+  return redirectToSignIn()
+}
+
+const post = await getPostById(id)
+if (post.data.allowedUsers.iv?.some((user) => user.userId === userId)) {
+} else {
+  return Astro.redirect('/404')
+}
+---
+
+{
+  post && (
+    <article>
+      <h1>{post.data.title.iv}</h1>
+      <p>{post.data.text.iv}</p>
+      <p>Published on: {new Date(post.created).toLocaleDateString()}</p>
+    </article>
+  )
+}

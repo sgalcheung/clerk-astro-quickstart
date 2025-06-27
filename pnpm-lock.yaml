@@ -17,6 +17,9 @@ importers:
       '@clerk/astro':
         specifier: ^2.7.2
         version: 2.9.2(astro@5.10.1(@netlify/blobs@8.2.0)(@types/node@24.0.4)(rollup@4.44.0)(typescript@5.8.3)(yaml@2.8.0))(react@19.1.0)
+      '@squidex/squidex':
+        specifier: 2.0.0-rc2
+        version: 2.0.0-rc2
       astro:
         specifier: ^5.7.12
         version: 5.10.1(@netlify/blobs@8.2.0)(@types/node@24.0.4)(rollup@4.44.0)(typescript@5.8.3)(yaml@2.8.0)
@@ -626,6 +629,9 @@ packages:
 
   '@shikijs/vscode-textmate@10.0.2':
     resolution: {integrity: sha512-83yeghZ2xxin3Nj8z1NMd/NCuca+gsYXswywDy5bHvwlWL8tpTQmzGeUuHd9FC3E/SBEMvzJRwWEOz5gGes9Qg==}
+
+  '@squidex/squidex@2.0.0-rc2':
+    resolution: {integrity: sha512-m2Pzb9bbntR2W8yxsgEVdUlUl1FGxhBwsM+RTA3HoIVMEzKbZhVhESCZo1Xvc0+Aq0NdROqk8iJMfzuKkCT07Q==}
 
   '@swc/helpers@0.5.17':
     resolution: {integrity: sha512-5IKx/Y13RsYd+sauPb2x+U/xZikHjolzfuDgTAl/Tdf3Q8rslRvC19NKDLgAJQ6wsqADk10ntlv08nPFw/gO/A==}
@@ -3524,6 +3530,8 @@ snapshots:
       '@types/hast': 3.0.4
 
   '@shikijs/vscode-textmate@10.0.2': {}
+
+  '@squidex/squidex@2.0.0-rc2': {}
 
   '@swc/helpers@0.5.17':
     dependencies:

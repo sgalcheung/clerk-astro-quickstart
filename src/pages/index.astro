@@ -1,7 +1,20 @@
 ---
+import { getPosts } from '../data/models/Post'
 import Layout from '../layouts/Layout.astro'
+
+const posts = await getPosts()
 ---
 
 <Layout title="Clerk + Astro">
   <p>Sign in to try Clerk out!</p>
+
+  <ul>
+    {
+      posts.items.map((post) => (
+        <li>
+          <a href={`/posts/${post.id}`}>{post.data.title.iv}</a>
+        </li>
+      ))
+    }
+  </ul>
 </Layout>

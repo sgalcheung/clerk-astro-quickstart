@@ -1,0 +1,23 @@
+---
+if (Astro.request.method === 'POST') {
+  const user = await Astro.locals.currentUser()
+
+  if (!user) {
+    throw new Error('You must be signed in to use this feature')
+  }
+
+  const data = await Astro.request.formData()
+  const serverData = {
+    usersHobby: data.get('hobby'),
+    userId: user.id,
+    profileImage: user.imageUrl,
+  }
+
+  console.log('add item action completed with user details ', serverData)
+}
+---
+
+<form method="POST">
+  <input value="soccer" type="text" name="hobby" />
+  <button type="submit">Submit your hobby</button>
+</form>
